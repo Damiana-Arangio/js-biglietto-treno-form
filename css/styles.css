@@ -1,0 +1,10 @@
+/************************
+    REGOLE GENERALI
+*************************/ 
+
+/** Reset Pagina */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
