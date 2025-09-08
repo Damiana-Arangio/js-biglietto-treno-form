@@ -22,9 +22,9 @@ formBiglietto.addEventListener ('submit', (event) => {
         LETTURA VALORI
     ************************/
     // Leggo i valori inseriti dall'utente nel form
-    const NomeCognomeValue = nomeCognome.value;
-    const kmValue = kmPercorrere.value;
-    const etaValue = etaPasseggero.value;
+    let NomeCognomeValue = nomeCognome.value;
+    let kmValue = Number(kmPercorrere.value);     // conversione stringa -> decimale
+    let etaValue = parseInt(etaPasseggero.value); // conversione stringa -> num int
 
     /******************************
         CALCOLO PREZZO BIGLIETTO
@@ -43,5 +43,13 @@ formBiglietto.addEventListener ('submit', (event) => {
 
     // Output prezzo biglietto 
     console.log("Costo biglietto: ", prezzoTotale.toFixed(2) + "€");
+    
+    /******************************
+            PULIZIA CAMPI FORM
+    *******************************/
+    nomeCognome.value = "";
+    kmPercorrere.value = "";
+    etaPasseggero.value = "";
+    
 });
 
