@@ -24,6 +24,34 @@
     <!----------------------------------------------------------------------------->
     <body>
 
+        <main>
+            <!-- TITOLO -->
+            <h1> CALCOLA IL PREZZO DEL TUO BIGLIETTO </h1>
+
+            <!-- Creazione form -->
+            <form action="#">
+
+                <!-- Nome e Cognome -->
+                <label for="nome-cognome"> Nome Cognome </label>
+                <input type="text" id="nome-cognome" class="d-block" name = nome-cognome>
+
+                <!-- km da percorrere -->
+                <label for="km-percorrere"> Km da percorrere </label>
+                <input type="number" id="km-percorrere" class="d-block" name=nkm-percorrere>
+
+                <!-- Fascia d'età -->
+                <label for="eta-passeggero"> Età </label>
+                <input type="number" min="1" max="100" id="eta-passeggero" class="d-block" name=eta-passeggero>
+
+                <!-- Bottone calcolo biglietto -->
+                 <button> Genera </button>
+
+                <!-- Bottone calcolo biglietto -->
+                <!-- <button> Annulla </button> -->
+            </form>
+
+        </main>
+
 
     </body>
 
