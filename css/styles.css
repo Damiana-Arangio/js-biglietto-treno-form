@@ -26,11 +26,14 @@ h2 {
 }
 
 
-/************************
-    REGOLE GENERALI
-*************************/
+/*************************
+    CLASSI RIUTILIZZABILI
+**************************/
 
-/** Form */
 .d-block {
     display: block;
+}
+
+.d-none {
+    display: none;
 }

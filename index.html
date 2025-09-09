@@ -57,17 +57,24 @@
                     <input type="number" min="1" max="100" id="eta-passeggero" class="d-block" name="eta-passeggero">
                 
                     <!-- Bottone Genera -> invio form -->
-                    <button type="submit"> Genera </button>
+                    <button type="submit" id="bottone-genera"> Genera </button>
                 
                     <!-- Bottone Annulla -> reset dati inseriti -->
-                    <button type="reset"> Annulla </button>
+                    <button type="submit" id="bottone-annulla"> Annulla </button>
                 </form>
             </section>
             
 
             <!-- BIGLIETTO -->
-            <section id="sezione-biglietto">
+            <section id="sezione-biglietto" class="d-none">
                 <h2> IL TUO BIGLIETTO </h2>
+                <ul>
+                    <li> NOME PASSEGGERO <span id="output-nome"></span> </li>
+                    <li> OFFERTA <span id="output-offerta"></span> </li>
+                    <li> CARROZZA <span id="output-carrozza"></span> </li>
+                    <li> CODICE PRENOTAZIONE <span id="output-cp"></span> <li>
+                    <li> COSTO BIGLIETTO <span id="output-prezzo-biglietto"></span></li>
+                </ul>
             </section>
 
         </main>
