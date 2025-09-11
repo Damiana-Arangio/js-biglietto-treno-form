@@ -56,30 +56,38 @@ formBiglietto.addEventListener ('submit', (event) => {
     // GESTIONE BOTTONE GENERA
         if (bottoneCliccato === "bottone-genera") {
 
-            // Compila biglietto
-            outputNome.innerText = nomeCognomeValue;
-            outputOfferta.innerText = offerta;
-            outputCarrozza.innerText = numCarrozza;
-            outputCP.innerText = numCP;
-            outputPrezzoBiglietto.innerText = prezzoBiglietto.toFixed(2) + " €";
+            // Validazione input
+            if (nomeCognome.value.trim() === "" || isNaN(kmValue) || (kmValue <= 0) ||
+                isNaN(etaValue) || etaValue <= 0) {
 
-            // Rendi visibile il biglietto
-            biglietto.classList.remove("d-none");
+                if (kmValue<0) {
+                    alert("Inserisci un numero valido per i Km!");
+                }
+                else
+                {
+                    alert("Compila tutti i campi prima di generare il biglietto!");
+                }
+            }
 
-            // Disabilita/Abilita bottoni
-            bottoneGenera.disabled = true;
-            bottoneAnnulla.disabled = false;  
+            else {
+                // Compila biglietto
+                outputNome.innerText = nomeCognomeValue;
+                outputOfferta.innerText = offerta;
+                outputCarrozza.innerText = numCarrozza;
+                outputCP.innerText = numCP;
+                outputPrezzoBiglietto.innerText = prezzoBiglietto.toFixed(2) + " €";
+
+                // Rendi visibile il biglietto
+                biglietto.classList.remove("d-none");
+
+                // Disabilita/Abilita bottoni
+                bottoneGenera.disabled = true;
+                bottoneAnnulla.disabled = false; 
+            } 
         }
 
         // GESTIONE BOTTONE ANNULLA
         else {
-            // Svuota biglietto
-            outputNome.innerText = "";
-            outputOfferta.innerText = "";
-            outputCarrozza.innerText = "";
-            outputCP.innerText = "";
-            outputPrezzoBiglietto.innerText = "";
-
             // Nascondi biglietto
             biglietto.classList.add("d-none");
 
@@ -88,10 +96,10 @@ formBiglietto.addEventListener ('submit', (event) => {
             bottoneAnnulla.disabled = true;  
         }  
 
-        // Pulizia campi form
-        nomeCognome.value = "";
-        kmPercorrere.value = "";
-        etaPasseggero.value = "";
+        // Svuota campi form
+        nomeCognome.value="";
+        kmPercorrere.value="";           
+        etaPasseggero.value = ""; 
 });
 
 
@@ -122,15 +130,15 @@ function scontoBiglietto( eta, km) {
 
 function tipoOfferta(eta) {
 
-    let offerta = "Biglietto standard";
+    let offerta = "Standard";
 
     // Applicazione sconto
     if (eta < 18) {
-        offerta = "Biglietto under 18";
+        offerta = "Under 18";
     }
 
     else if (eta > 65) {
-        offerta = "Biglietto over 65";
+        offerta = "Over 65";
 
     }
     return offerta;

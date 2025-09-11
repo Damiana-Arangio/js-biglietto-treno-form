@@ -14,26 +14,122 @@ html {
 }
 
 body {
-
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.2rem;
 }
 
 h1 {
     font-size: 2rem;
+    padding: 30px;
 }
 
 h2 {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
+}
+
+ul {
+    list-style-type: none;
+    padding: 30px;
+}
+
+li {
+    padding: 10px 20px;
 }
 
 
-/*************************
+/**************************
     CLASSI RIUTILIZZABILI
-**************************/
+***************************/
+.container {
+    max-width: 60%;
+    margin: 50px auto;
+    padding-bottom: 50px;
+    background-color: #d2d2d2;
+}
 
+/** Display */
 .d-block {
     display: block;
 }
 
 .d-none {
     display: none;
+}
+
+/** Flex */
+.flex-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+/** Testo */
+.text-center {
+    text-align: center;
+}
+
+.font-bold {
+    font-weight: bold;
+}
+
+/** Spaziature */
+.margin-bottom-20 {
+    margin-bottom: 20px;
+}
+
+
+/************ 
+    FORM
+************/
+input {
+    margin-top: 10px;
+    width: 225px;
+}
+
+button {
+    width: 80px;
+    height: 38px;
+    margin: 10px;
+    border: 1px solid black;
+    border-radius: 4px;
+}
+
+/*************** 
+    BIGLIETTO
+****************/
+
+#sezione-biglietto {
+    width: 80%;
+    margin: 0 auto;
+    background-color: #f9f9f9;
+}
+
+#output-prezzo-biglietto {
+    padding: 20px;
+    text-align: end;
+    color: #006400;;
+}
+
+/* Header ticket */
+.header-ticket {
+    color: white;
+    background-color: #b30000;
+    height: 65px;
+    padding-top: 20px;
+}
+
+/** Icona */
+.img-treno {
+    padding-right: 10px;
+}
+
+ul span {
+    display: block;
+    margin-top: 20px;
 }
