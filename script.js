@@ -56,17 +56,12 @@ formBiglietto.addEventListener ('submit', (event) => {
     // GESTIONE BOTTONE GENERA
         if (bottoneCliccato === "bottone-genera") {
 
-            // Validazione input
-            if (nomeCognome.value.trim() === "" || isNaN(kmValue) || (kmValue <= 0) ||
-                isNaN(etaValue) || etaValue <= 0) {
-
-                if (kmValue<0) {
-                    alert("Inserisci un numero valido per i Km!");
-                }
-                else
-                {
-                    alert("Compila tutti i campi prima di generare il biglietto!");
-                }
+            // Controllo se i campi sono vuoti
+            if (nomeCognome.value.trim() === "" || kmPercorrere.value.trim() === "" || etaPasseggero.value.trim() === "") {
+                alert ("Compila i campi!");
+                nomeCognome.required = true;
+                kmPercorrere.required = true;
+                etaPasseggero.required = true;
             }
 
             else {
@@ -82,24 +77,23 @@ formBiglietto.addEventListener ('submit', (event) => {
 
                 // Disabilita/Abilita bottoni
                 bottoneGenera.disabled = true;
-                bottoneAnnulla.disabled = false; 
-            } 
+                bottoneAnnulla.disabled = false;
+            }   
         }
 
         // GESTIONE BOTTONE ANNULLA
         else {
+
+            // Svuota campi form
+            event.target.reset();
+
             // Nascondi biglietto
             biglietto.classList.add("d-none");
 
             // Disabilita/Abilita bottoni
             bottoneGenera.disabled = false;
-            bottoneAnnulla.disabled = true;  
-        }  
-
-        // Svuota campi form
-        nomeCognome.value="";
-        kmPercorrere.value="";           
-        etaPasseggero.value = ""; 
+            bottoneAnnulla.disabled = true;
+        }
 });
 
 
